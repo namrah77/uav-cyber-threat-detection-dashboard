@@ -1,0 +1,19 @@
+/* General */
+.big-font { font-size: 28px !important; font-weight: bold; text-align: center; }
+.button-row { display: flex; justify-content: center; align-items: center; margin-bottom: 20px; }
+.status-box { text-align: center; padding: 15px; border-radius: 10px; margin: 10px auto; width: 80%; font-size: 20px; font-weight: bold; }
+.metrics-center { text-align: center; font-size: 18px; margin-top: 10px; }
+.log-section { text-align: center; margin-top: 20px; }
+.download-button { display: block; margin: 10px auto; font-weight: bold; padding: 10px 20px !important; border-radius: 8px !important; border: none !important; cursor: pointer; }
+
+[data-baseweb="baseui"]:not([data-theme="light"]) div[data-testid="stButton"] button {
+    background-color: #0066cc !important;
+    color: white !important;
+}
+[data-theme="dark"] .status-box.benign { background-color: rgba(0,128,0,0.3); color: #90ee90; }
+[data-theme="dark"] .status-box.malicious { background-color: rgba(255,0,0,0.3); color: #ff7f7f; }
+[data-theme="dark"] .status-box.completed { background-color: rgba(30,144,255,0.2); color: #87cefa; }
+
+[data-theme="light"] .status-box.benign { background-color: #2E7D32 !important; color: white !important; }
+[data-theme="light"] .status-box.malicious { background-color: #D32F2F !important; color: white !important; }
+[data-theme="light"] .status-box.completed { background-color: #1976D2 !important; color: white !important; }
