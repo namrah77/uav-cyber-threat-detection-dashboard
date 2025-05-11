@@ -11,6 +11,7 @@ import numpy as np
 import seaborn as sns
 from datetime import datetime
 from sklearn.inspection import permutation_importance
+import os
 
 # Detect theme mode
 base_theme = st.get_option("theme.base") or "light"
@@ -123,14 +124,14 @@ def app():
     st.markdown("<h1 class='big-font'>Feature Importance of Trained Models</h1>", unsafe_allow_html=True)
 
     # Feature Importance (Isolation Forest)
-    features = pd.read_csv("C:/Users/PMLS/uav_dashboard/Feature Importance IF.csv")
+    features = pd.read_csv(os.path.join("Feature Importance IF.csv"))
     top_10 = features.sort_values(by='Importance', ascending=False).head(10)
     fig = px.bar(top_10, x='Feature', y='Importance', title="Top 10 Feature Importances (Isolation Forest)", 
                  color='Importance', color_continuous_scale=feature_bar_colors, template=plot_template)
     st.plotly_chart(fig)
 
     # Feature Importance (Random Forest)
-    rf_features = pd.read_csv("C:/Users/PMLS/uav_dashboard/Feature Importance RF.csv")
+    rf_features = pd.read_csv(os.path.join("Feature Importance RF.csv"))
     top_10_rf = rf_features.sort_values(by='Importance', ascending=False).head(10)
     fig_rf = px.scatter(top_10_rf, x='Feature', y='Importance', size='Importance', color='Importance', 
                         color_continuous_scale=rf_colors, title="Top 10 Feature Importances (Random Forest)", 

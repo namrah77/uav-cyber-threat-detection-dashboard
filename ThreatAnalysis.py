@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -12,7 +13,7 @@ def app():
     isolation_forest = load_isolation_forest()
     classifier = load_classifier()
     transformer = load_scaler_function()
-    data = pd.read_csv('C:/Users/PMLS/uav_dashboard/datasets/synthetic_data_stream.csv')
+    data = data = pd.read_csv(os.path.join("datasets", "synthetic_data_stream.csv"))
 
     features = ['noise_per_ms', 'eph', 'timestamp', 's_variance_m_s', 'epv', 'lat_x',
                 'epv_x', 'evh', 'alt_ellipsoid_x', 'alt_ellipsoid_y', 'vel_m_s',
