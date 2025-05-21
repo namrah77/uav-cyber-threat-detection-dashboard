@@ -83,7 +83,7 @@ with st.sidebar:
     # Radio-based navigation
     selected = st.radio(
         "Navigation",
-        ["Home", "Threat Analysis", "User Management"],
+        ["Home", "Threat Analysis"],
         label_visibility="collapsed",
         index=0
     )
