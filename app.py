@@ -1,6 +1,7 @@
 import streamlit as st
 import Home
 import ThreatAnalysis
+st.cache_data.clear()
 
 # Set Streamlit page config
 st.set_page_config(
